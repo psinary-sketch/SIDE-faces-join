@@ -1,0 +1,27 @@
+name = "SIDEFacesJoin"
+defaultTargets = ["FacesJoin"]
+
+# THE CLOSURE JOIN, act b705 under (R315)(5) (W-ORD-LV-CLOSURE-JOIN, PLACE-papers OPEN_TRAILS :15452): a third kernel requiring
+# SIDE-explicit-formula and SIDE-lv-conservation at one shared Lean and Mathlib pin -- SIDE-explicit-formula's (Lean v4.34.0-rc1,
+# Mathlib de5ce8a9; relay data/b703_pins.txt) -- so that the join of the clause's two faces is read by Lean's closure and not by the
+# correspondence reader. The two kernels are required by git revision: SIDE-explicit-formula at v0.37 = 38e2734 and SIDE-lv-conservation
+# at its deposit v0.10.0 = 93c27ec, neither edited. Mathlib is resolved once, at this root's pin; lv-conservation's own requirement
+# (5e932f97 at Lean v4.29.1) is not followed, its 15 files being rebuilt at this pin (the price read at b703).
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "de5ce8a9a66a4aa68a9bdbb35b63a06d34d9ca11"
+
+[[require]]
+name = "SIDEExplicitFormula"
+git = "https://github.com/psinary-sketch/SIDE-explicit-formula"
+rev = "38e273477257687d676033be0b0243af84a1e08a"
+
+[[require]]
+name = "sideLvConservation"
+git = "https://github.com/psinary-sketch/SIDE-lv-conservation"
+rev = "93c27ec2cb9b1fc59e4796b93a2150c408ecfa8f"
+
+[[lean_lib]]
+name = "FacesJoin"
